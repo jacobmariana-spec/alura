@@ -1,68 +1,67 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>bLOG</title>
-  <style>
-    header {
-      background-color: #9370DB;
-      color: #FFFAFA;
-      text-align: center;
-      max-width: 800px; /* Corrigido de max-widht */
-      margin: 0 auto;
-      padding: 16px;
-      border: 5px solid #FF0000; /* Corrigido de 5x */
-    }
 
-    main {
-      background-color: #FFFAFA;
-      color: #9370DB;
-      text-align: center;
-      max-width: 800px; /* Corrigido de max-widht */
-      margin: 0 auto;
-      padding: 16px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>BTS</h1>
-    <p>Estrearam em 2013 e passaram por grandes dificuldades, porém, hoje em dia, são um dos maiores grupos existentes no mundo todo.</p>
-  </header>
-
-  <main>
-    <img src="Gemini_Generated_Image_eeuhydeeuhydeeuh.png" 
-      alt="Fotografia do grupo asiático em um programa de televisão">
-    <div>
-      <h2>Meu primeiro post</h2>
-      <p class="artigo-autor">Por: Mariana Moreira 
-      <p>Boas vindas ao meu novo blog! Aqui vou compartilhar curiosidades sobre um grupo sul coreano.</p>
-      <button onclick="botaoClicado(this)">❤️ <span>0</span></button>
-      <button onclick="botaoClicado(this)">👍 <span>0</span></button>
-    </div>
-    <article>
-    </article>
-    <img src="Gemini_Generated_Image_eeuhydeeuhydeeuh.png" 
-      alt="Fotografia do grupo asiático em um programa de televisão">
-    <div>
-      <h2>Meu primeiro post</h2>
-      <p class="artigo-autor">Por: Mariana Moreira 
-      <p>Boas vindas ao meu novo blog! Aqui vou compartilhar curiosidades sobre um grupo sul coreano.</p>
-      <button onclick="botaoClicado(this)">❤️ <span>0</span></button>
-      <button onclick="botaoClicado(this)">👍 <span>0</span></button>
-    </div>
-    <article>
-  </main>
-<body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+     
+      header{
+        background-color: #87CEEB;
+        color: #FF69B4;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      main{
+        background-color: #FF69B4;
+        color: #87CEFA;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 16px;
+        display: flex;
+        gap: 20px
+      }
+      img {
+        width: 160px;
+        height: 160px;
+      }
+      .artigo-autor {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>BTS</h1>
+      </p1>Mariana Moreira</p1>
+    </header>
+     
+    <main>
+      <img src="" alt="">
+      <div>
+        <h2>Meu primeiro post</h2>
+        <p class="artigo-autor"></p>
+        <p> <p>Boas vindas ao meu novo blog! Aqui vou compartilhar curiosidades sobre um grupo sul coreano.</p>
+        <button>👍<span>0</span></button>
+         <button>👎<span>0</span></button>
+       
+      </div>
+    </main>
+  </body>
   <script>
-    // A função agora recebe o botão que foi clicado como parâmetro
-    function botaoClicado(botao) {
-      let texto = botao.querySelector("span");
-      texto.textContent++;
-    }
+   
+    const botoes = document.querySelectorAll("button");
+   
+    botoes.forEach(function(botao) {
+      botao.addEventListener("click", botaoClicado);
+      function botaoClicado() {
+        console.log("fui clicado");
+        let texto = botao.querySelector("span");
+        texto.textContent++;
+      }
+})
   </script>
-
-</body>
 </html>
