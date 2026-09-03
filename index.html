@@ -20,23 +20,29 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 16px;
-        /* Removemos o display: flex daqui */
       }
 
-      /* Cada artigo será exibido em linha (imagem + texto) */
       article {
         display: flex;
         gap: 20px;
-        margin-bottom: 24px; /* Espaçamento entre os posts */
+        margin-bottom: 24px;
       }
 
       img {
         width: 160px;
         height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
       }
 
       .artigo-autor {
         font-weight: bold;
+      }
+
+      button {
+        cursor: pointer;
+        padding: 6px 12px;
+        margin-right: 8px;
       }
     </style>
   </head>
@@ -47,7 +53,6 @@
     </header>
       
     <main>
-      <!-- Primeiro Post -->
       <article>
         <img src="Gemini_Generated_Image_6xt6mx6xt6mx6xt6.png" alt="imagem do grupo">
         <div>
@@ -57,12 +62,11 @@
           O BTS (Bangtan Sonyeondan) é um grupo sul-coreano de K-pop formado em 2013 e composto por sete integrantes: RM, Jin, Suga, J-Hope, Jimin, V e Jungkook.
           <br><br>
           Tornou-se um dos maiores fenômenos da música mundial, acumulando bilhões de reproduções e liderando paradas internacionais como a Billboard Hot 100.</p>
-          <button>👍<span>0</span></button>
-          <button>👎<span>0</span></button>
+          <button>👍 <span>0</span></button>
+          <button>👎 <span>0</span></button>
         </div>
       </article>
 
-      <!-- Segundo Post -->
       <article>
         <img src="Gemini_Generated_Image_6xt6mx6xt6mx6xt6.png" alt="imagem do grupo">
         <div>
@@ -70,8 +74,8 @@
           <p class="artigo-autor">Por: Mariana Moreira</p>
           <p>O BTS (Bangtan Sonyeondan) é um grupo sul-coreano de K-pop formado em 2013 e composto por sete integrantes: RM, Jin, Suga, J-Hope, Jimin, V e Jungkook.</p>
           <p>Foi formado pela empresa Big Hit Entertainment e estreou oficialmente em junho de 2013 com a música "No More Dream". Inicialmente com uma forte identidade voltada ao hip-hop, o septeto sul-coreano destacou-se desde o início por participar ativamente da escrita de suas canções, abordando temas reais da juventude, como pressões sociais, saúde mental e busca pela identidade.</p>
-          <button>👍<span>0</span></button>
-          <button>👎<span>0</span></button>
+          <button>👍 <span>0</span></button>
+          <button>👎 <span>0</span></button>
         </div>
       </article>
     </main>
@@ -79,20 +83,11 @@
     <script>
       const botoes = document.querySelectorAll("button");
       
-      botoes.forEach(function(botao){
-        let curtiu = false;
-        botao.addEventListener("click", botaoClicado);
-        
-        function botaoClicado() {
+      botoes.forEach(function(botao) {
+        botao.addEventListener("click", function() {
           let texto = botao.querySelector("span");
-          if (curtiu === false){
-            texto.textContent++;
-            curtiu = true;
-          } else {
-            texto.textContent--;
-            curtiu = false;
-          }
-        }
+          texto.textContent = parseInt(texto.textContent) + 1;
+        });
       });
     </script>
   </body>
